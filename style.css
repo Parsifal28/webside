@@ -1,25 +1,33 @@
-.logo {
-  float: left;
-}
-nav {
-  float: right;
-}
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-nav li {
-  display: inline-block; /*один из способов разместить элементы в строку*/
-}
-.container:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 .container {
-  width: 100%;
-  max-width: 1024px; /*максимальная ширина может иметь другое значение*/
-  padding: 15px;
-  margin: 0 auto;
+    display: grid;
+    grid-gap: 0px;    
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px 0px 600px 100px;
+    grid-template-areas:
+        "h h h h h h h h h h h h h"
+        "b b b b b b b b b b b b b"
+        "m m c c c c c c c c c c c"
+        "f f f f f f f f f f f f f";
+}
+.button {
+    width: 80px;
+    height: 40px;
+    
+}
+
+.header {
+    background-color: #000000;
+    grid-area: h;
+}
+.menu {
+    background-color: #808080;
+    grid-area: m;
+}
+.content {
+    background-color: #778899;
+    grid-area: c;
+}
+.footer {
+    background-color: #DCDCDC;
+    grid-area: f;
 }
